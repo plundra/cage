@@ -25,7 +25,8 @@ activities outside the scope of the running application are prevented.
 *-m* <mode>
 	Set the multi-monitor behavior. Supported modes are:
 	*last* Cage uses only the last connected monitor.
-	*extend* Cage extends the display across all connected monitors.
+	*extend* Cage extends the display horizontally across all connected monitors.
+	*stack* Cage extends the display vertically across all connected monitors.
 
 *-r*
 	Rotate the output 90 degrees clockwise. This can be specified up to three

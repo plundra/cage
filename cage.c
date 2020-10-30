@@ -189,7 +189,8 @@ usage(FILE *file, const char *cage)
 		" -D\t Turn on damage tracking debugging\n"
 #endif
 		" -h\t Display this help message\n"
-		" -m extend Extend the display across all connected outputs (default)\n"
+		" -m extend Extend the display horizontally across all connected outputs (default)\n"
+		" -m stack Extend the display vertically across all connected outputs\n"
 		" -m last Use only the last connected output\n"
 		" -r\t Rotate the output 90 degrees clockwise, specify up to three times\n"
 		" -s\t Allow VT switching\n"
@@ -225,6 +226,8 @@ parse_args(struct cg_server *server, int argc, char *argv[])
 				server->output_mode = CAGE_MULTI_OUTPUT_MODE_LAST;
 			} else if (strcmp(optarg, "extend") == 0) {
 				server->output_mode = CAGE_MULTI_OUTPUT_MODE_EXTEND;
+			} else if (strcmp(optarg, "stack") == 0) {
+				server->output_mode = CAGE_MULTI_OUTPUT_MODE_STACK;
 			}
 			break;
 		case 'r':
